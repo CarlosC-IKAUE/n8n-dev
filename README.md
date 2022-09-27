@@ -1,4 +1,4 @@
-# n8n-nodes-_node-name_
+# n8n-nodes-ik-bq
 
 This is an n8n community node. It's a modification to the original Google BigQuery module.
 

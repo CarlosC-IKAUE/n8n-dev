@@ -98,9 +98,9 @@
 			true,
 			{
 				"multiline": {
-					"objects": "always",
-					"arrays": "always",
-					"functions": "always",
+					"objects": "ignore",
+					"arrays": "ignore",
+					"functions": "ignore",
 					"typeLiterals": "ignore"
 				},
 				"esSpecCompliant": true

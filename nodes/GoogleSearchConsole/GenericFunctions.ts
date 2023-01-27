@@ -9,10 +9,11 @@ import {
 } from 'n8n-core';
 
 import {
-	JsonObject,
 	ICredentialDataDecryptedObject,
 	ICredentialTestFunctions,
-	IDataObject, NodeApiError, NodeOperationError,
+	IDataObject, 
+	JsonObject,
+	NodeApiError, NodeOperationError,
 } from 'n8n-workflow';
 
 import moment from 'moment';

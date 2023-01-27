@@ -7,11 +7,11 @@ import {
 	ICredentialTestFunctions,
 	IDataObject,
 	ILoadOptionsFunctions,
+	INodeCredentialTestResult,
 	INodeExecutionData,
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-	INodeCredentialTestResult,
 	NodeOperationError,
 } from 'n8n-workflow';
 import { OptionsWithUri } from 'request';
@@ -29,7 +29,6 @@ export class GoogleSearchConsole implements INodeType {
 		description: 'Get stuff from google search console',
 		defaults: {
 			name: 'Google Search Console',
-			color: '#0aa55c',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
@@ -81,17 +80,17 @@ export class GoogleSearchConsole implements INodeType {
 				type: 'options',
 				options: [
 					{
-						name: 'Search Analytics',
-						value: 'searchAnalytics',
+						name: 'Search Analytic',
+						value: 'searchAnalytics'
 					},
 					{
-						name: 'Sitemaps',
-						value: 'sitemaps',
-					},
-
+						name: 'Sitemap',
+						value: 'sitemaps'
+					}
 				],
 				default: 'searchAnalytics',
-				description: 'The resource to perform operation on.',
+				description: 'The resource to perform operation on',
+				noDataExpression: true
 			},
 			{
 				displayName: 'Operation',
@@ -107,12 +106,13 @@ export class GoogleSearchConsole implements INodeType {
 				options: [
 					{
 						name: 'Post',
+						action: 'Post a search analytics',
 						value: 'post',
 						description: 'Post query',
 					},
 				],
 				default: 'post',
-				description: 'The operation to perform.',
+				noDataExpression: true
 			},
 
 			// ----------------------------------
@@ -134,7 +134,7 @@ export class GoogleSearchConsole implements INodeType {
 				description: 'The site URL (e.g. https://blog.ikhuerta.com/)',
 			},
 			{
-				displayName: 'Start date',
+				displayName: 'Start Date',
 				name: 'startDate',
 				type: 'string',
 				displayOptions: {
@@ -149,7 +149,7 @@ export class GoogleSearchConsole implements INodeType {
 				description: 'Start date of the extraction (YYYY-MM-DD format)',
 			},
 			{
-				displayName: 'End date',
+				displayName: 'End Date',
 				name: 'endDate',
 				type: 'string',
 				displayOptions: {
@@ -182,10 +182,10 @@ export class GoogleSearchConsole implements INodeType {
 				// get additional fields input
 				// const additionalFields = this.getNodeParameter('additionalFields', 0) as IDataObject;
 				const additionalFields = {
-					startDate: startDate,
-					endDate: endDate,
+					startDate,
+					endDate,
 					dimensions: 'page'
-				}
+				};
 				const data: IDataObject = {};
 
 				Object.assign(data, additionalFields);

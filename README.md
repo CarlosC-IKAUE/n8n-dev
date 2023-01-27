@@ -1,8 +1,8 @@
-# n8n-nodes-ik-bq
+# n8n-ikaue-additional-nodes
 
-This is an n8n community node. It's a modification to the original Google BigQuery module.
+This is an n8n community node. It contains some custom modifications of the Google BigQuery and Google Search Console nodes, made by IKAUE. 
 
-The node is almost exactly the same as the BigQuery mode, but it has a custom query operation added when getting records.
+These custom modifications allow the user to insert custom queries when using these nodes.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -21,10 +21,12 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 ## Operations
 
 All the BigQuery operations, + a query operation to be able to use custom queries if needed.
+All the GSC operations, + a query operation to be able to use custom queries if needed.
 
 ## Credentials
 
 Same as the BigQuery node, you need to either use OAuth2 or a service account.
+Same as the GSC node, you need to either use OAuth2 or a service account.
 
 ## Resources
 

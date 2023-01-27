@@ -1,19 +1,25 @@
 {
-  "name": "n8n-nodes-ik-bq",
-  "version": "0.1.0",
-  "description": "Google BigQuery node for n8n, but it has an added query operation.",
+  "name": "n8n-ikaue-additional-nodes",
+  "version": "0.1.4",
+  "description": "IKAUE nodes for N8N, such as a custom BigQuery node or a Google Search Console node.",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "n8n-ikaue",
+    "ikaue",
+    "google-bigquery",
+    "gbq",
+    "google-search-console",
+    "gsc"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
     "name": "IKAUE",
-    "email": "carlos@ikaue.com"
+    "email": "data@ikaue.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CarlosC-IKAUE/n8n-dev.git"
+    "url": "https://github.com/IKAUE-Development/n8n-ikaue-additional-nodes.git"
   },
   "main": "index.js",
   "scripts": {
@@ -30,10 +36,12 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/GoogleBigQueryOAuth2Api.credentials.js"
+      "dist/credentials/GoogleBigQueryOAuth2Api.credentials.js",
+      "dist/credentials/GoogleSearchConsoleOAuth2Api.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/BigQueryIK/GoogleBigQueryIk.node.js"
+      "dist/nodes/BigQueryIK/GoogleBigQueryIk.node.js",
+      "dist/nodes/GoogleSearchConsole/GoogleSearchConsole.node.js"
     ]
   },
   "devDependencies": {
